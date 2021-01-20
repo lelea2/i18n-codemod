@@ -34,13 +34,12 @@ module.exports = function transformer(file, api) {
             args[2]
           ];
         }
+        node.arguments = newArgs;
       } else if (firstArgs === 'template') {
         newArgs = [args[1], args[2]];
+        node.arguments = newArgs;
       }
-    } else {
-      newArgs = args;
     }
-    node.arguments = newArgs;
     return node;
   });
 
